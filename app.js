@@ -7,13 +7,18 @@ module.exports = function (fastify, opts, next) {
   // Place here your custom code!
 
 
-  fastify.register(require('fastify-cors'), { })
+  //register fastify auth
+  fastify.register(require('fastify-auth'))
 
+  //enable cors
+  fastify.register(require('fastify-cors'), { })
 
   //register jwt auth module
   fastify.register(require('fastify-jwt'), { 
     secret: 'supersecret' 
   })
+  
+  //
 
   // Do not touch the following lines
 

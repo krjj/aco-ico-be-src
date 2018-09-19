@@ -6,9 +6,16 @@ const fp = require('fastify-plugin')
 // to export the decorators to the outer scope
 
 module.exports = fp(function (fastify, opts, next) {
-  fastify.decorate('someSupport', function () {
-    return 'hugs'
+  fastify.decorate('verifyJWT', async function (request, reply, done) {
+    // your validation logic
+    try {
+      await request.jwtVerify()
+      done()
+    } catch (err) {
+      done(err)
+    }
   })
+
   next()
 })
 
