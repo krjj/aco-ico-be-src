@@ -33,7 +33,7 @@ module.exports = function (fastify, opts, next) {
     beforeHandler: [],
     handler: function (request, reply) {
       let userid = uuid.v4()
-      fastify.level.db.get('krjamdade@gmail.com', function (err, value) {
+      fastify.level.db.get(request.body.email, function (err, value) {
         if (!err) return reply.send(httpError.BadRequest('User already exists'))
         fastify.level.db.put(request.body.email, JSON.stringify({
           userdata: {
