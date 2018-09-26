@@ -11,7 +11,7 @@ module.exports = function (fastify, opts, next) {
   fastify.register(require('fastify-auth'))
 
   //enable cors
-  fastify.register(require('fastify-cors'), { })
+  fastify.register(require('fastify-cors'))
 
   //register jwt auth module
   fastify.register(require('fastify-jwt'), { 
