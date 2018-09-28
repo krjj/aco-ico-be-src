@@ -2,7 +2,7 @@
 
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
-
+const fs = require("fs")
 module.exports = function (fastify, opts, next) {
   // Place here your custom code!
 
@@ -37,4 +37,11 @@ module.exports = function (fastify, opts, next) {
 
   // Make sure to call next when done
   next()
+}
+//fastify server instance options
+module.exports.options = {
+  https: {
+    key: fs.readFileSync('./privkey.pem'),
+    cert: fs.readFileSync('./cert.pem')
+  }
 }
