@@ -19,8 +19,11 @@
     "fastify-jwt": "^0.3.0",
     "fastify-plugin": "^1.2.0",
     "http-errors": "^1.7.1",
+    "json2csv": "^4.2.1",
     "level": "^4.0.0",
-    "node-uuid": "^1.4.8"
+    "level-to-json": "^0.0.1",
+    "node-uuid": "^1.4.8",
+    "shelljs": "^0.8.2"
   },
   "devDependencies": {
     "standard": "^11.0.1",
